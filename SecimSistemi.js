@@ -40,7 +40,7 @@ hainlik:function(aday=this.adayver()){
                  aday.oy+=oy;	
            		break;
            case 'ince':                 
-                 if(this.kisiler["tayip"].oy-aday.oy>20 || aday.oy<4 || !this.hile) aday.oy+=oy;
+                 if(this.kisiler["tayip"].oy-aday.oy>30 || aday.oy<15 || !this.hile) aday.oy+=oy;
            		break;
            case 'meral':
                  if((aday.oy+oy)<this.kisiler["demirtas"].oy || !this.hile) aday.oy+=oy;
