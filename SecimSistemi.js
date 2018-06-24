@@ -1,5 +1,5 @@
 var anadoluajans={
-adaylar:["tayip","ince","meral","demirtas","perincek","diger"],
+adaylar:["tayip","ince","meral","demirtas","perincek","temel","diger"],
 kisiler:[],
 toplam_oy:0,
 tarih:Date.now(),
@@ -47,6 +47,9 @@ hainlik:function(aday=this.adayver()){
            		break;
            case 'demirtas':
                  if((aday.oy+oy)<this.kisiler["ince"].oy&&aday.oy<13 || !this.hile) aday.oy+=oy;
+           		break;
+           case 'temel':
+                 if((aday.oy+oy)<this.kisiler["demirtas"].oy&&aday.oy<2 || !this.hile) aday.oy+=oy;
            		break;
            case 'perincek':if(aday.oy<1 || !this.hile)aday.oy+=oy;break;
            default:if((aday.oy+oy)<this.kisiler["perincek"].oy || !this.hile) aday.oy+=oy;break;    	
