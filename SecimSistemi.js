@@ -16,6 +16,7 @@ secim:function(hile=true){
                 this.hainlik();
      	    }     
      }
+     console.log("Açılan Sandık:"+Math.round(this.topla()));
 },
 topla:function(print=true){
 	if(	(Date.now()-this.tarih)< this.bekle) return this.toplam_oy; 
@@ -23,7 +24,7 @@ topla:function(print=true){
 	for(var i=0; i<this.adaylar.length; i++){
 		let oy=this.kisiler[this.adaylar[i]].oy;
 		durum+=oy;
-	    if(print) console.log(this.adaylar[i]+"="+oy);
+	    if(print) console.log(this.adaylar[i]+"="+Math.round(oy));
     }
 	if(print)console.log("------------------");	
     this.toplam_oy=durum;
@@ -36,7 +37,7 @@ hainlik:function(aday=this.adayver()){
                  aday.oy+=oy;
            		break;
            case 'ince':                 
-                 if(this.kisiler["tayip"].oy-aday.oy>5 || aday.oy<4) aday.oy+=oy;
+                 if(this.kisiler["tayip"].oy-aday.oy>20 || aday.oy<4) aday.oy+=oy;
            		break;
            case 'meral':
                  if((aday.oy+oy)<this.kisiler["demirtas"].oy) aday.oy+=oy;
